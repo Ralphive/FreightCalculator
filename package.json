@@ -1,0 +1,30 @@
+{
+  "name": "freightcalculator",
+  "version": "0.0.1",
+  "description": "Freight Calculator App to be used in the SMB Summit 2018 Hands On exercise",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ralphive/FreightCalculator.git"
+  },
+  "keywords": [
+    "freight",
+    "api",
+    "Sap",
+    "Cloud",
+    "Platform"
+  ],
+  "author": "Ralph Oliveira",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ralphive/FreightCalculator/issues"
+  },
+  "homepage": "https://github.com/Ralphive/FreightCalculator#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2"
+  }
+}
