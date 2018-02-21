@@ -7,52 +7,50 @@ module.exports = {
     }
 }
 
+var defaultFrom = { zip: "94117", country: "US" }
+var defaultParcel = {
+    length: "5",
+    width: "5",
+    height: "5",
+    distance_unit: "in",
+    weight: "2",
+    mass_unit: "kg"
+};
 
 function Rates(body, callback) {
-    var addressFrom = {
-        "name": "Shawn Ippotle",
-        "street1": "215 Clayton St.",
-        "city": "San Francisco",
-        "state": "CA",
-        "zip": "94117",
-        "country": "US",
-        "phone": "+1 555 341 9393",
-        "email": "shippotle@goshippo.com"
-    };
+    //Returns A JSON with calculated shipment rates
 
-    var addressTo = {
-        "name": "Mr Hippo",
-        "street1": "Broadway 1",
-        "city": "New York",
-        "state": "NY",
-        "zip": "10007",
-        "country": "US",
-        "phone": "+1 555 341 9393",
-        "email": "mrhippo@goshippo.com"
-    };
-
-    var parcel = {
-        "length": "5",
-        "width": "5",
-        "height": "5",
-        "distance_unit": "in",
-        "weight": "2",
-        "mass_unit": "lb"
-    };
+    var parcel = body.parcel || defaultParcel
+    var addressFrom = body.from || defaultFrom
+    var addressTo = body.to
 
     shippo.shipment.create({
-        "address_from": addressFrom,
-        "address_to": addressTo,
-        "parcels": [parcel],
-        "async": false
-    }, function (err, shipment) {
+        address_from: addressFrom,
+        address_to: addressTo,
+        parcels: [parcel],
+        async: false}, function (err, shipment) {
         if (err) {
             console.error("error " + err);
             callback(err, null)
         }
         else {
             console.log("Shipment calculated ");
-            callback(null, shipment)
+            
+            var rates = []
+            
+            for (var i = 0; i < shipment.rates.length; i++){
+                var rate = {
+                    provider: shipment.rates[i].provider,
+                    service: shipment.rates[i].servicelevel.name,
+                    provider_image_75: shipment.rates[i].provider_image_75,
+                    provider_image_200: shipment.rates[i].provider_image_75,
+                    estimated_days: shipment.rates[i].estimated_days,
+                    amount: shipment.rates[i].amount,
+                    currency: shipment.rates[i].currency
+                }
+                rates.push(rate);
+            }
+            callback(null, rates)
         }
     });
 }
