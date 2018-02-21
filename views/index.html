@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <h4>Ship Item To</h4>
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="zip">Zip Code</label>
+                    <input type="text" class="form-control" id="zip">
+                </div>
+                <div class="form-group">
+                    <label for="name">Country</label>
+                    <input type="country" class="form-control" id="country" size="4" maxlength="2" placeholder="US">
+                </div>
+                <button id="submit" class="btn btn-info btn-md">Get Rates</button>
+            </form>
+        </div>
+        <div>
+            <h4>Shipment Estimation</h4>
+            <table class="table .table-striped" id="resultTable">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Provider</th>
+                        <th>Service</th>
+                        <th>Est. Days</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/calls.js"></script>
+</body>
+
+</html>
