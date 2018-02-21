@@ -4,7 +4,7 @@
   "description": "Freight Calculator App to be used in the SMB Summit 2018 Hands On exercise",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
