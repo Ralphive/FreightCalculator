@@ -1,8 +1,13 @@
 console.log("Initializing Freight Calculator app")
-
+console.log(process.env.SHIPPO_KEY)
 // Load Node Modules
 var express = require('express');
 var bodyParser = require('body-parser');
+
+// Load Local Modules
+var freight = require('./modules/freight');
+
+
 
 var app = express();
 
@@ -10,11 +15,14 @@ var app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-//Endpoint to POST items to Service Layer
+//Endpoint to Retrieve Rates Prices
 app.post('/Rates', function (req, res) {
     console.log ("Received POST Request")
     console.log (JSON.stringify(req.body))
-    res.send({message: "all good"})
+    freight.Rates(req.body, function(err, resp){
+        res.send(resp);
+    })
+    
 });
 
 //Gets port from environment of use default
