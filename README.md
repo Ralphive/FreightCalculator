@@ -1,5 +1,6 @@
 # FreightCalculator
 [![SAP](https://i.imgur.com/kkQTp3m.png)](https://cloudplatform.sap.com)
+
 A freight calculator app used as backend system in the SMB Summit 2018 Hands On exercise. 
 
 ## Pre Requisites
