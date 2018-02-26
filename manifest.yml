@@ -4,5 +4,3 @@ applications:
   memory: 64m
   instances: 1
   buildpack: https://github.com/cloudfoundry/nodejs-buildpack.git
-  env:
-    SHIPPO_KEY: "<Your SHIPPO API KEY>"

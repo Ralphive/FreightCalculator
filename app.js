@@ -16,7 +16,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 //Allow Cors
+console.log("Allowing CORS...")
 app.use(function(req, res, next) {
+    console.log("Setting CORS Header")
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
