@@ -9,7 +9,7 @@ A freight calculator app used as backend system in the SMB Summit 2018 Hands On 
 * A [Shippo test API token](https://goshippo.com/docs/test-mode)
 
 ## Installation
-1 - Clone or download this repo
+1 - Clone or download this repo. 
 2 - Using the [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html) push the app to the SAP CP Cloud Foundry
 ```sh
 $ cf push
