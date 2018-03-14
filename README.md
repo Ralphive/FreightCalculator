@@ -26,4 +26,4 @@ $ cf restart freightcalc
 4 - Access your app in the URL shown in the terminal.
 
 ## License
-cfNetDemo  is released under the terms of the MIT license. See [LICENSE](LICENSE) for more information or see https://opensource.org/licenses/MIT.
+FreightCalculator  is released under the terms of the MIT license. See [LICENSE](LICENSE) for more information or see https://opensource.org/licenses/MIT.
